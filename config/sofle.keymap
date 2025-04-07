@@ -88,7 +88,7 @@
                     &kp LEFT_WIN  &kp LEFT_ALT  &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans
             >;
 
-            sensor-bindings = <&rot_mh &rot_mv>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &msc SCRL_DOWN SCRL_UP>;
         };
 
         f_layer {
