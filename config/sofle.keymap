@@ -18,24 +18,17 @@
 #define RAISE 2
 #define ADJUST 3
 
-&mmv {
-    acceleration-exponent = <0>;
+&msc {
+    x-input-code = <10>;
+    y-input-code = <10>;
     time-to-max-speed-ms = <300>;
-    delay-ms = <0>;
-    trigger-period-ms = <4>;
+    acceleration-exponent = <0>;
 };
 
 / {
 
     behaviors {
         // Mouse
-        rot_mh: rot_mh {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
-            tap-ms = <40>;
-        };
-
         rot_mv: rot_mv {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -67,7 +60,7 @@
                         &kp LGUI  &kp LALT  &kp LCTRL  &mo 2   &kp RET       &kp SPACE  &mo 1   &kp RALT  &kp RCTRL  &mo 3
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp UP DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &rot_mv>;
         };
 
         nav_layer {
@@ -88,7 +81,7 @@
                     &kp LEFT_WIN  &kp LEFT_ALT  &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &msc SCRL_DOWN SCRL_UP>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &rot_mv>;
         };
 
         f_layer {
