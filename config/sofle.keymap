@@ -59,8 +59,27 @@
              #sensor-binding-cells = <0>;
              bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
  
-             tap-ms = <10>;
+             tap-ms = <20>;
          };
+
+        hmr: home_row_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-prefered";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-on-release;
+        };
+        lt: layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
+            display-name = "Layer-Tap";
+        };
      };
  
      conditional_layers {
@@ -89,9 +108,9 @@
              bindings = <
  &kp N1        &kp N2            &kp N3              &kp N4      &kp N5              &kp N6                              &kp N7       &kp N8           &kp N9           &kp N0             &kp MINUS                  &kp EQUAL
  &kp ESCAPE    &kp Q             &kp W               &kp E       &kp R               &kp T                               &kp Y        &kp U            &kp I            &kp O              &kp P                      &kp BSLH
- &kp TAB       &mt LEFT_SHIFT A  &mt LEFT_CONTROL S  &mt LALT D  &mt LEFT_COMMAND F  &kp G                               &kp H        &mt RIGHT_GUI J  &mt RIGHT_ALT K  &mt RCTRL L        &mt RIGHT_SHIFT SEMICOLON  &kp SQT
+ &kp TAB       &hmr LEFT_SHIFT A  &hmr LEFT_CONTROL S  &hmr LALT D  &hmr LEFT_COMMAND F  &kp G                               &kp H        &hmr RIGHT_GUI J  &hmr RIGHT_ALT K  &hmr RCTRL L        &hmr RIGHT_SHIFT SEMICOLON  &kp SQT
  &kp CAPSLOCK  &kp Z             &kp X               &kp C       &kp V               &kp B   &kp C_MUTE       &none      &kp N        &kp M            &kp COMMA        &kp DOT            &kp FSLH                   &kp DELETE
-                                 &kp LEFT_CONTROL    &kp LALT    &kp LEFT_COMMAND    &mo 2   &kp BACKSPACE    &kp ENTER  &lt 1 SPACE  &kp RIGHT_GUI    &kp RIGHT_ALT    &kp RIGHT_CONTROL
+                                 &kp LEFT_CONTROL    &kp LALT    &kp LEFT_COMMAND     &kp BACKSPACE &mo 2     &kp ENTER  &lt 1 SPACE  &kp RIGHT_GUI    &kp RIGHT_ALT    &kp RIGHT_CONTROL
              >;
  
              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_mouse>;
@@ -115,7 +134,7 @@
              bindings = <
  &trans  &trans          &trans               &trans              &trans             &trans                    &trans  &trans         &trans                          &trans                       &kp MINUS             &kp EQUAL
  &none   &none           &kp GRAVE            &kp EXCLAMATION     &kp CARET          &none                     &none   &none          &kp LEFT_BRACKET                &kp RIGHT_BRACKET            &none                 &kp BACKSLASH
- &none   &kp LEFT_SHIFT  &mt LCTRL AMPERSAND  &mt LEFT_ALT ASTRK  &mt LEFT_GUI HASH  &none                     &none   &kp RIGHT_GUI  &mt RIGHT_ALT LEFT_PARENTHESIS  &mt RCTRL RIGHT_PARENTHESIS  &mt RIGHT_SHIFT SEMI  &kp SQT
+ &none   &kp LEFT_SHIFT  &hmr LCTRL AMPERSAND  &hmr LEFT_ALT ASTRK  &hmr LEFT_GUI HASH  &none                     &none   &hmr RIGHT_GUI  &hmr RIGHT_ALT LEFT_PARENTHESIS  &hmr RCTRL RIGHT_PARENTHESIS  &hmr RIGHT_SHIFT SEMI  &kp SQT
  &none   &none           &none                &kp AT_SIGN         &kp PERCENT        &none   &trans    &trans  &none   &none          &kp COMMA                       &kp PERIOD                   &kp QUESTION          &none
                          &trans               &trans              &trans             &trans  &trans    &trans  &trans  &trans         &trans                          &trans
              >;
