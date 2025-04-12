@@ -134,7 +134,7 @@
              bindings = <
  &trans  &trans          &trans               &trans              &trans             &trans                    &trans  &trans         &trans                          &trans                       &kp MINUS             &kp EQUAL
  &none   &none           &kp GRAVE            &kp EXCLAMATION     &kp CARET          &none                     &none   &none          &kp LEFT_BRACKET                &kp RIGHT_BRACKET            &none                 &kp BACKSLASH
- &none   &kp LEFT_SHIFT  &hmr LCTRL AMPERSAND  &hmr LEFT_ALT ASTRK  &hmr LEFT_GUI HASH  &none                     &none   &hmr RIGHT_GUI  &hmr RIGHT_ALT LEFT_PARENTHESIS  &hmr RCTRL RIGHT_PARENTHESIS  &hmr RIGHT_SHIFT SEMI  &kp SQT
+ &none   &kp LEFT_SHIFT  &hmr LCTRL AMPERSAND  &hmr LEFT_ALT ASTRK  &hmr LEFT_GUI HASH  &none                     &none   &kp RIGHT_GUI  &hmr RIGHT_ALT LEFT_PARENTHESIS  &hmr RCTRL RIGHT_PARENTHESIS  &hmr RIGHT_SHIFT SEMI  &kp SQT
  &none   &none           &none                &kp AT_SIGN         &kp PERCENT        &none   &trans    &trans  &none   &none          &kp COMMA                       &kp PERIOD                   &kp QUESTION          &none
                          &trans               &trans              &trans             &trans  &trans    &trans  &trans  &trans         &trans                          &trans
              >;
