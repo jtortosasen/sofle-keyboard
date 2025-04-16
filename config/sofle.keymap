@@ -11,7 +11,7 @@
  #include <dt-bindings/zmk/pointing.h>
  #include <dt-bindings/zmk/rgb.h>
  
- #define ZMK_POINTING_DEFAULT_SCRL_VAL 200
+ #define ZMK_POINTING_DEFAULT_SCRL_VAL 300
  #define BASE 0
  #define LOWER 1
  #define RAISE 2
@@ -93,11 +93,11 @@
          nav_layer {
              display-name = "nav";
              bindings = <
- &trans  &trans  &trans            &trans        &trans            &trans                    &trans     &trans    &trans    &trans     &trans  &trans
- &trans  &trans  &trans            &trans        &trans            &trans                    &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans  &trans
- &trans  &trans  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &trans                    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
- &trans  &trans  &trans            &trans        &trans            &trans  &trans    &trans  &trans     &mkp MB4  &mkp MB5  &trans     &trans  &kp DELETE
-                 &trans            &trans        &trans            &trans  &trans    &trans  &trans     &trans    &trans    &trans
+ &trans  &trans          &trans            &trans        &trans            &trans                    &trans     &trans    &trans    &trans     &trans  &trans
+ &trans  &trans          &trans            &trans        &trans            &trans                    &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans  &trans
+ &trans  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &trans                    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+ &trans  &trans          &trans            &trans        &trans            &trans  &trans    &trans  &mkp MB1   &mkp MB4  &mkp MB5  &trans     &trans  &kp DELETE
+                         &trans            &trans        &trans            &trans  &trans    &trans  &trans     &trans    &trans    &trans
              >;
  
              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_mouse>;
