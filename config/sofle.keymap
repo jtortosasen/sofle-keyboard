@@ -76,7 +76,7 @@
         compatible = "zmk,combos";
 
         activate_settings {
-            bindings = <&mo 3>;
+            bindings = <&mo 2>;
             key-positions = <57 58 59>;
         };
 
@@ -86,7 +86,7 @@
         };
 
         space {
-            bindings = <&kp DELETE>;
+            bindings = <&kp ENTER>;
             key-positions = <54 53>;
         };
 
@@ -102,37 +102,24 @@
         default_layer {
             display-name = "default";
             bindings = <
-&kp N1      &kp N2  &kp N3          &kp N4           &kp N5  &kp N6                                      &kp N7     &kp N8  &kp N9        &kp N0          &kp MINUS      &kp EQUAL
-&kp TAB     &kp Q   &kp W           &kp E            &kp R   &kp T                                       &kp Y      &kp U   &kp I         &kp O           &kp P          &kp BACKSLASH
-&kp ESCAPE  &kp A   &kp S           &kp D            &kp F   &kp G                                       &kp H      &kp J   &kp K         &kp L           &kp SEMICOLON  &kp SQT
-&mo 2       &kp Z   &kp X           &kp C            &kp V   &kp B          &kp C_MUTE        &none      &kp N      &kp M   &kp COMMA     &kp DOT         &kp FSLH       &mo 2
-                    &kp LEFT_ARROW  &kp RIGHT_ARROW  &mo 1   &kp BACKSPACE  &td0    &kp ENTER  &kp SPACE  &mo 1   &kp UP_ARROW  &kp DOWN_ARROW
+&kp N1      &kp N2  &kp N3            &kp N4    &kp N5            &kp N6                              &kp N7     &kp N8         &kp N9     &kp N0             &kp MINUS      &kp EQUAL
+&kp TAB     &kp Q   &kp W             &kp E     &kp R             &kp T                               &kp Y      &kp U          &kp I      &kp O              &kp P          &kp BACKSLASH
+&kp ESCAPE  &kp A   &kp S             &kp D     &kp F             &kp G                               &kp H      &kp J          &kp K      &kp L              &kp SEMICOLON  &kp SQT
+&td0        &kp Z   &kp X             &kp C     &kp V             &kp B          &kp C_MUTE    &none  &kp N      &kp M          &kp COMMA  &kp DOT            &kp FSLH       &td0
+                    &kp LEFT_CONTROL  &kp LALT  &kp LEFT_COMMAND  &kp BACKSPACE  &mo 1         &mo 1  &kp SPACE  &kp RIGHT_GUI  &kp RALT   &kp RIGHT_CONTROL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_mouse>;
         };
 
-        mod_layer {
-            display-name = "mod";
+        second_layer {
+            display-name = "second";
             bindings = <
-&kp F1  &kp F2                 &kp F3                 &kp F4                 &kp F5                 &kp F6                    &kp F7    &kp F8         &kp F9    &kp F10            &kp F11     &kp F12
-&trans  &trans                 &trans                 &trans                 &trans                 &trans                    &trans    &trans         &trans    &trans             &trans      &trans
-&trans  &sk LEFT_SHIFT         &sk LEFT_CONTROL       &sk LALT               &sk LEFT_COMMAND       &trans                    &trans    &sk RIGHT_GUI  &sk RALT  &sk RIGHT_CONTROL  &sk RSHIFT  &trans
-&trans  &kp LA(LC(LG(LS(Z))))  &kp LA(LC(LG(LS(X))))  &kp LA(LG(LC(LS(C))))  &kp LA(LC(LG(LS(V))))  &trans  &trans    &trans  &mkp MB1  &mkp MB4       &mkp MB5  &trans             &trans      &trans
-                               &trans                 &trans                 &trans                 &trans  &trans    &trans  &trans    &trans         &trans    &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_mouse>;
-        };
-
-        sym_layer {
-            display-name = "symbol";
-            bindings = <
-&kp LS(N1)  &kp LS(N2)             &kp LS(N3)             &kp LS(N4)             &kp LS(N5)             &kp LS(N6)                    &kp LS(N7)  &kp LS(N8)       &kp LS(N9)        &kp LS(N0)         &kp LS(MINUS)      &kp LS(EQUAL)
-&trans      &kp GRAVE              &none                  &none                  &none                  &none                         &none       &kp EXCLAMATION  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans             &kp LS(BACKSLASH)
-&trans      &sk LEFT_SHIFT         &sk LEFT_CONTROL       &sk LALT               &sk LEFT_COMMAND       &none                         &none       &kp AMPERSAND    &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(SEMICOLON)  &kp LS(SQT)
-&trans      &kp LA(LC(LG(LS(Z))))  &kp LA(LC(LG(LS(X))))  &kp LA(LG(LC(LS(C))))  &kp LA(LC(LG(LS(V))))  &none       &trans    &trans  &kp RA(N)   &kp QUESTION     &kp LS(COMMA)     &kp LS(PERIOD)     &kp LS(SLASH)      &trans
-                                   &trans                 &trans                 &trans                 &trans      &trans    &trans  &trans      &trans           &trans            &trans
+&kp F1  &kp F2     &kp F3    &kp F4    &kp F5     &kp F6                           &kp F7     &kp F8           &kp F9            &kp F10            &kp F11            &kp F12
+&trans  &kp GRAVE  &none     &kp UP    &none      &kp PG_UP                        &kp HOME   &kp EXCLAMATION  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans             &kp LS(BACKSLASH)
+&trans  &none      &kp LEFT  &kp DOWN  &kp RIGHT  &kp PAGE_DOWN                    &kp END    &kp AMPERSAND    &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(SEMICOLON)  &kp LS(SQT)
+&trans  &trans     &trans    &mkp MB5  &mkp MB4   &mkp MB1       &trans    &trans  &kp RA(N)  &kp QUESTION     &kp LS(COMMA)     &kp LS(PERIOD)     &kp LS(SLASH)      &trans
+                   &trans    &trans    &trans     &trans         &trans    &trans  &trans     &trans           &trans            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_mouse>;
