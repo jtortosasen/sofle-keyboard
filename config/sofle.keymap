@@ -51,6 +51,10 @@
 //      chosen { zmk,underglow = &led_strip; };
 //  };
 
+&sl {
+    release-after-ms = <3000>;
+};
+
 / {
     behaviors {
         scroll_mouse: Mouse_Scroller {
@@ -80,14 +84,14 @@
             key-positions = <57 58 59>;
         };
 
-        layer2 {
+        to_layer1 {
             bindings = <&mo 1>;
-            key-positions = <28 27>;
+            key-positions = <54 53>;
         };
 
-        layer_2 {
+        layer1 {
             bindings = <&mo 1>;
-            key-positions = <31 32>;
+            key-positions = <55 56>;
         };
     };
 
@@ -100,7 +104,7 @@
 &kp MINUS   &kp N1  &kp N2        &kp N3    &kp N4  &kp N5                                      &kp N6     &kp N7  &kp N8     &kp N9   &kp N0         &kp EQUAL
 &kp TAB     &kp Q   &kp W         &kp E     &kp R   &kp T                                       &kp Y      &kp U   &kp I      &kp O    &kp P          &kp BACKSLASH
 &kp ESCAPE  &kp A   &kp S         &kp D     &kp F   &kp G                                       &kp H      &kp J   &kp K      &kp L    &kp SEMICOLON  &kp SQT
-&kp LCTRL   &kp Z   &kp X         &kp C     &kp V   &kp B          &kp C_MUTE        &none      &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH       &mo 2
+&kp LCTRL   &kp Z   &kp X         &kp C     &kp V   &kp B          &kp C_MUTE        &none      &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH       &sl 2
                     &kp LEFT_GUI  &kp LALT  &mo 1   &kp BACKSPACE  &kp LEFT_SHIFT    &kp ENTER  &kp SPACE  &mo 1   &kp RALT   &td0
             >;
 
@@ -110,11 +114,11 @@
         second_layer {
             display-name = "second";
             bindings = <
-&kp GRAVE  &kp F1  &kp F2  &kp F3            &kp F4             &kp F5                    &kp F6  &kp F7          &kp F8          &kp F9     &kp F10  &kp F11
-&trans     &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans                    &trans  &kp HOME        &kp UP_ARROW    &kp END    &trans   &kp F12
-&trans     &trans  &trans  &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans   &trans
-&trans     &trans  &trans  &trans            &trans             &trans  &trans    &trans  &trans  &trans          &trans          &trans     &trans   &trans
-                   &trans  &trans            &trans             &trans  &trans    &trans  &trans  &trans          &trans
+&kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                    &kp F6    &kp F7          &kp F8           &kp F9            &kp F10            &kp F11
+&trans     &trans  &trans  &trans  &trans  &trans                    &trans    &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp F12
+&trans     &trans  &trans  &trans  &trans  &trans                    &kp LEFT  &kp DOWN        &kp UP_ARROW     &kp RIGHT         &trans             &trans
+&trans     &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans          &trans           &trans            &trans             &trans
+                   &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_mouse>;
